@@ -8,9 +8,12 @@ class BytebankApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: ListaTransferencia(),
+      theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+              primary: Colors.green[900],
+              secondary: Colors.deepPurpleAccent[400]),
       ),
+      home: ListaTransferencia(),
     );
   }
 }
@@ -114,7 +117,7 @@ class ItemTransferencia extends StatelessWidget {
     return Card(
       child: ListTile(
         leading: Icon(Icons.monetization_on),
-        title: Text(_transferencia.valor.toString()),
+        title: Text('R\$ ${_transferencia.valor.toString()}'),
         subtitle: Text(_transferencia.numeroConta.toString()),
       ),
     );
